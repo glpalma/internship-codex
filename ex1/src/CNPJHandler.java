@@ -56,6 +56,7 @@ public class CNPJHandler {
      */
     public static boolean CNPJIsFormatted(String formattedCNPJ) {
         // TODO: reimplementar com regex
+        // TODO: mudar para considerar uma String só com números
         return formattedCNPJ.length() == 18 && formattedCNPJ.charAt(2) == '.' &&
                 formattedCNPJ.charAt(6) == '.' && formattedCNPJ.charAt(10) == '/' &&
                 formattedCNPJ.charAt(15) == '-';
@@ -78,7 +79,7 @@ public class CNPJHandler {
 
         for (int i = 0; i < formattedCNPJ.length(); i++) {
             if (Character.isDigit(formattedCNPJ.charAt(i))) {
-                cnpj[cnpjIndex] = formattedCNPJ.charAt(i);
+                cnpj[cnpjIndex] = Character.getNumericValue(formattedCNPJ.charAt(i));
                 cnpjIndex += 1;
             }
         }
