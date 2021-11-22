@@ -1,5 +1,3 @@
-import java.util.Set;
-
 public class CNPJHandler {
     /**
      * Returns true if given CNPJ can be validated; false otherwise.
@@ -37,12 +35,25 @@ public class CNPJHandler {
         return val1 == cnpj[12] && val2 == cnpj[13];
     }
 
+    /**
+     * Returns true if given CNPJ can be validated; false otherwise.
+     *
+     * @param formattedCNPJ a String representing a formatted CNPJ number
+     * @throws IllegalArgumentException if the given CNPJ is not properly formatted
+     * @return boolean value
+     */
     public static boolean validateCNPJ(String formattedCNPJ) {
         int[] cnpj = parseCNPJ(formattedCNPJ); // extracts cnpj from the formatted string
 
         return validateCNPJ(cnpj);
     }
 
+    /**
+     * Returns true if given CNPJ is formatted as in the following pattern: XX.XXX.XXX/YYYY-ZZ
+     *
+     * @param formattedCNPJ a String representing a formatted CNPJ number
+     * @return boolean value
+     */
     public static boolean CNPJIsFormatted(String formattedCNPJ) {
         // TODO: reimplementar com regex
         return formattedCNPJ.length() == 18 && formattedCNPJ.charAt(2) == '.' &&
@@ -50,6 +61,13 @@ public class CNPJHandler {
                 formattedCNPJ.charAt(15) == '-';
     }
 
+    /**
+     * Parses a CNPJ number from a String with the following format: XX.XXX.XXX/YYYY-ZZ
+     *
+     * @param formattedCNPJ a String representing a formatted CNPJ number
+     * @throws IllegalArgumentException if the given CNPJ is not properly formatted
+     * @return int array representing the parsed CNPJ
+     */
     private static int[] parseCNPJ(String formattedCNPJ) {
         int[] cnpj = new int[14];
         int cnpjIndex = 0;
