@@ -1,7 +1,17 @@
 verificar se só tem números no input
 se não, tenta extrair os 14 números do formato XX.XXX.XXX/YYYY-ZZ
+    isso é feito com a ferramenta do java que permite criar duas funções com o mesmo nome,
+    mas com parâmetros diferentes
+        uma função recebe um array de int, enquanto a outra recebe uma string que representa o cnpj formatado
 
 -- se não der certo até aqui, levantar erro de parâmetro --
 
 se der, validar o número do cpf
     retorna true se válido, false caso contrário
+
+//////planejamento da extração do cnpj do formato pronto /////////
+
+verificar se string contém este formato: XX.XXX.XXX/YYYY-ZZ
+        se sim
+            extrair os números em um array de int
+retornar validateCNPJ(cnpjExtraido)

@@ -1,5 +1,6 @@
-public class CNPJHandler {
+import java.util.Set;
 
+public class CNPJHandler {
     /**
      * Returns true if given CNPJ can be validated; false otherwise.
      *
@@ -34,5 +35,36 @@ public class CNPJHandler {
 
         // compares the obtained validation values with the ones present in the given CNPJ
         return val1 == cnpj[12] && val2 == cnpj[13];
+    }
+
+    public static boolean validateCNPJ(String formattedCNPJ) {
+        int[] cnpj = parseCNPJ(formattedCNPJ); // extracts cnpj from the formatted string
+
+        return validateCNPJ(cnpj);
+    }
+
+    public static boolean CNPJIsFormatted(String formattedCNPJ) {
+        // TODO: reimplementar com regex
+        return formattedCNPJ.length() == 18 && formattedCNPJ.charAt(2) == '.' &&
+                formattedCNPJ.charAt(6) == '.' && formattedCNPJ.charAt(10) == '/' &&
+                formattedCNPJ.charAt(15) == '-';
+    }
+
+    private static int[] parseCNPJ(String formattedCNPJ) {
+        int[] cnpj = new int[14];
+        int cnpjIndex = 0;
+
+        if (!CNPJIsFormatted(formattedCNPJ)) {
+            throw new IllegalArgumentException("CNPJ is not properly formatted.");
+        }
+
+        for (int i = 0; i < formattedCNPJ.length(); i++) {
+            if (Character.isDigit(formattedCNPJ.charAt(i))) {
+                cnpj[cnpjIndex] = formattedCNPJ.charAt(i);
+                cnpjIndex += 1;
+            }
+        }
+
+        return cnpj;
     }
 }
