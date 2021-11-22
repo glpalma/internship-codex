@@ -1,0 +1,7 @@
+verificar se só tem números no input
+se não, tenta extrair os 14 números do formato XX.XXX.XXX/YYYY-ZZ
+
+-- se não der certo até aqui, levantar erro de parâmetro --
+
+se der, validar o número do cpf
+    retorna true se válido, false caso contrário
