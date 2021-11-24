@@ -1,21 +1,21 @@
-public class Triangle {
+public class Rectangle {
     private int xRight, xLeft; // coordinates of the vertical sides
     private int yLower, yUpper; // coordinates of the horizontal sides
 
-    public Triangle(int xLowerLeft, int yLowerLeft, int xUpperRight, int yUpperRight) {
+    public Rectangle(int xLowerLeft, int yLowerLeft, int xUpperRight, int yUpperRight) {
         this.xRight = xUpperRight;
         this.xLeft = xLowerLeft;
         this.yLower = yLowerLeft;
         this.yUpper = yUpperRight;
     }
 
-    public boolean intersects(Triangle other) {
+    public boolean intersects(Rectangle other) {
         checkNullity(other);
         return (this.containsVerticalSideOf(other) && this.containsHorizontalSideOf(other)) ||
                (other.containsVerticalSideOf(this) && other.containsHorizontalSideOf(this));
     }
 
-    private boolean containsVerticalSideOf(Triangle other) {
+    private boolean containsVerticalSideOf(Rectangle other) {
         checkNullity(other);
         boolean containsLeftSide = (xLeft <= other.xLeft) && (other.xLeft <= xRight);
         boolean containsRightSide = (xLeft <= other.xRight) && (other.xRight <= xRight);
@@ -23,7 +23,7 @@ public class Triangle {
         return containsLeftSide || containsRightSide;
     }
 
-    private boolean containsHorizontalSideOf(Triangle other) {
+    private boolean containsHorizontalSideOf(Rectangle other) {
         checkNullity(other);
         boolean containsLowerSide = (yLower <= other.yLower) && (other.yLower <= yUpper);
         boolean containsUpperSide = (yLower <= other.yUpper) && (other.yUpper <= yUpper);
@@ -31,7 +31,7 @@ public class Triangle {
         return containsLowerSide || containsUpperSide;
     }
 
-    private void checkNullity(Triangle t) {
+    private void checkNullity(Rectangle t) {
         if (t == null) {
             throw new NullPointerException("The other triangle can't be null!");
         }
