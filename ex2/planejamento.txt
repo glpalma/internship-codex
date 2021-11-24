@@ -1,0 +1,34 @@
+### anotações
+interseção ocorre sempre entre dois retângulos
+
+dois pares de coordenadas são fornecidas
+1. canto inferior esquerdo
+2. canto superior direito
+com essas informações, eu consigo as coordenadas dos quatro lados do triângulo
+
+### brainstorming
+
+se o ladoEsqA for maior que o ladoDirB, os dois não se intersectam em nenhum caso
+se o ladoDirA for menor que o ladoEsqB, os dois não se intersectam em nenhum caso
+
+se o ladoInfA for maior que o ladoSupB, os dois não se intersectam em nenhum caso
+se o ladoSupA for menor que o ladoInfB, os dois não se intersectam em nenhum caso
+
+em que casos ocorrem a interseção?
+
+quando a parte inferior ou superior do A está entre os limites horizontais de B (supB e infB)
+and
+quando a parte direita ou esquerda do A está entre os limites verticais de B (dirB e esqB)
+
+### planejamento do código
+classe triângulo
+construtor recebe 4 parâmetros
+xLeft, yDown, xRight, yUp
+
+método intersects(outro Triângulo) {
+quando a parte inferior ou superior do A está entre os limites horizontais de B (supB e infB)
+and
+quando a parte direita ou esquerda do A está entre os limites verticais de B (dirB e esqB)
+testa isso de cima do objeto com o outro triangulo, dps chama o mesmo método
+do outro triangulo com o objeto atual como outro triângulo
+}
