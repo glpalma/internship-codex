@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a55a7266-05f1-4e89-ac63-57868c539984" name="Changes" comment="creation of the validateCNPJ function + documentation">
+    <list default="true" id="a55a7266-05f1-4e89-ac63-57868c539984" name="Changes" comment="bug fixes in parseCNPJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planejamento.txt" beforeDir="false" afterPath="$PROJECT_DIR$/planejamento.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CNPJHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CNPJHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,20 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
+  <component name="RunManager">
+    <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tester" />
+      <module name="ex1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Tester" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +63,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637590084126</updated>
-      <workItem from="1637590086496" duration="8498000" />
+      <workItem from="1637590086496" duration="12474000" />
+      <workItem from="1637788388855" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="creation of the validateCNPJ function + documentation">
       <created>1637593007789</created>
@@ -60,7 +73,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637593007790</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implementation of cnpj validation from a formatted string">
+      <created>1637605412781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637605412781</updated>
+    </task>
+    <task id="LOCAL-00003" summary="documentation of validateCNPJ(String formattedCNPJ), parseCNPJ(String formattedCNPJ) and CNPJIsFormatted(String formattedCNPJ).">
+      <created>1637605788572</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637605788572</updated>
+    </task>
+    <task id="LOCAL-00004" summary="bug fixes in parseCNPJ">
+      <created>1637607343254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637607343254</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,10 +110,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creation of the validateCNPJ function + documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation of the validateCNPJ function + documentation" />
+    <MESSAGE value="implementation of cnpj validation from a formatted string" />
+    <MESSAGE value="documentation of validateCNPJ(String formattedCNPJ), parseCNPJ(String formattedCNPJ) and CNPJIsFormatted(String formattedCNPJ)." />
+    <MESSAGE value="bug fixes in parseCNPJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes in parseCNPJ" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
