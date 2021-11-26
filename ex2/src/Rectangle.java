@@ -62,4 +62,55 @@ public class Rectangle {
             throw new NullPointerException("The other rectangle can't be null!");
         }
     }
+
+    public int intersectionArea(Rectangle other) {
+        int[] intCoord = intersectionCoordinates(other);
+        int area = 0;
+        if (intCoord[0] != -1) {
+            area = (intCoord[2] - intCoord[0] + 1) * (intCoord[3] - intCoord[1] + 1);
+        }
+        return area;
+    }
+
+    public int[] intersectionCoordinates(Rectangle other) {
+        checkNullity(other);
+        int[] coordinates = {-1, -1, -1, -1};
+        int newRight, newLeft;
+        int newLower, newUpper;
+
+        if (this.intersects(other)) {
+            if (this.contains(other)) {
+                coordinates = new int[]{other.xLeft, other.yLower, other.xRight, other.yUpper};
+            } else if (other.contains(this)) {
+                coordinates = new int[]{this.xLeft, this.yLower, this.xRight, this.yUpper};
+            } else {
+                // calculates horizontal bounds of the new intersection
+                if (this.yLower <= other.yUpper && other.yUpper <= this.yUpper) {
+                    newUpper = other.yUpper;
+                    newLower = this.yLower;
+                } else {
+                    // (this.yLower <= other.yLower && other.yLower <= this.yUpper)
+                    newUpper = this.yUpper;
+                    newLower = other.yLower;
+                }
+
+                // calculates vertical bounds of the new intersection
+                if (this.xLeft <= other.xLeft && other.xLeft <= this.xRight) { // left in
+                    newRight = this.xRight;
+                    newLeft = other.xLeft;
+                } else { // right in
+                    // (this.xLeft <= other.xRight && other.xRight <= this.xRight)
+                    newRight = other.xRight;
+                    newLeft = this.xLeft;
+                }
+                coordinates = new int[]{newLeft, newLower, newRight, newUpper};
+            }
+        }
+        return coordinates;
+    }
+
+    public boolean contains(Rectangle other) {
+        return (this.xLeft <= other.xLeft && other.xRight <= this.xRight) &&
+                (this.yLower <= other.yLower && other.yUpper <= this.yUpper);
+    }
 }
