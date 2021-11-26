@@ -63,6 +63,12 @@ public class Rectangle {
         }
     }
 
+    /**
+     * Calculates the intersection area of two intersecting rectangles. If the rectangles don't intersect, the return value is 0.
+     * @throws NullPointerException if the other rectangle is a null pointer
+     * @param other represents the other rectangle to be tested
+     * @return an integer representing the area of the intersection
+     */
     public int intersectionArea(Rectangle other) {
         int[] intCoord = intersectionCoordinates(other);
         int area = 0;
@@ -72,6 +78,12 @@ public class Rectangle {
         return area;
     }
 
+    /**
+     * Calculates the coordinates of the intersection between the current rectangle object and the given one.
+     * @throws NullPointerException if the other rectangle is a null pointer
+     * @param other represents the other rectangle to be tested
+     * @return {-1, -1, -1, -1} if the rectangles don't intersect; {newLeft, newLower, newRight, newUpper} otherwise.
+     */
     public int[] intersectionCoordinates(Rectangle other) {
         checkNullity(other);
         int[] coordinates = {-1, -1, -1, -1};
@@ -109,6 +121,11 @@ public class Rectangle {
         return coordinates;
     }
 
+    /**
+     * Checks if the current rectangle object contains another given rectangle.
+     * @param other represents the other rectangle to be tested
+     * @return true if the current rectangle object contains the other rectangle.
+     */
     public boolean contains(Rectangle other) {
         return (this.xLeft <= other.xLeft && other.xRight <= this.xRight) &&
                 (this.yLower <= other.yLower && other.yUpper <= this.yUpper);
